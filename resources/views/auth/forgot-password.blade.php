@@ -5,7 +5,7 @@ $customizerHidden = 'customizer-hide';
 
 @extends('layouts/blankLayout')
 
-@section('title', 'Forgot Password')
+@section('title', 'Olvidaste tu contraseña? No te preocupes¡')
 
 @section('page-style')
 {{-- Page Css files --}}
@@ -20,10 +20,10 @@ $customizerHidden = 'customizer-hide';
       <div class="flex-row text-center mx-auto">
         <img src="{{asset('assets/img/pages/forgot-password-'.$configData['style'].'.png')}}" alt="Auth Cover Bg color" width="520" class="img-fluid authentication-cover-img" data-app-light-img="pages/forgot-password-light.png" data-app-dark-img="pages/forgot-password-dark.png">
         <div class="mx-auto">
-          <h3>No worries, we will send you instructions 👩🏻‍💻</h3>
+          <h3>No wte preocupes, te enviaremos las instrucciones 👩🏻‍💻</h3>
           <p>
-            We can help you reset your password and security info. First, enter <br> your email address and click on send reset link.
-          </p>
+            Podemos ayudarte a cambiar tu contraseña e información de seguridad. 
+            Primero, ingresa<br> tu dirección de corre y haz click en el link de reestablecer contraseña.</p>
         </div>
       </div>
     </div>
@@ -39,8 +39,8 @@ $customizerHidden = 'customizer-hide';
           </a>
         </div>
         <!-- /Logo -->
-        <h4 class="mb-2">Forgot Password? 🔒</h4>
-        <p class="mb-4">Enter your email and we'll send you instructions to reset your password</p>
+        <h4 class="mb-2">Olvidaste tu contraseña? 🔒</h4>
+        <p class="mb-4">Ingresa tu correo y te enviaremos las instrucciones para reestablecer tu contraseña</p>
 
         @if (session('status'))
         <div class="mb-1 text-success">
@@ -51,7 +51,7 @@ $customizerHidden = 'customizer-hide';
         <form id="formAuthentication" class="mb-3" action="{{ route('password.email') }}" method="POST">
           @csrf
           <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
+            <label for="email" class="form-label">Correo</label>
             <input type="text" class="form-control @error('email') is-invalid @enderror" id="email" name="email" placeholder="john@example.com" autofocus>
             @error('email')
             <span class="invalid-feedback" role="alert">
@@ -59,13 +59,13 @@ $customizerHidden = 'customizer-hide';
             </span>
             @enderror
           </div>
-          <button type="submit" class="btn btn-primary d-grid w-100">Send Reset Link</button>
+          <button type="submit" class="btn btn-primary d-grid w-100">Enviar Link para reestablecer</button>
         </form>
         <div class="text-center">
           @if (Route::has('login'))
           <a href="{{ route('login') }}" class="d-flex align-items-center justify-content-center">
             <i class="bx bx-chevron-left scaleX-n1-rtl"></i>
-            Back to login
+            Volver a Inicio de sesión
           </a>
           @endif
         </div>

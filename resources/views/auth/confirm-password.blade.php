@@ -20,9 +20,9 @@ $customizerHidden = 'customizer-hide';
       <div class="flex-row text-center mx-auto">
         <img src="{{asset('assets/img/pages/reset-password-'.$configData['style'].'.png')}}" alt="Auth Cover Bg color" width="520" class="img-fluid authentication-cover-img" data-app-light-img="pages/reset-password-light.png" data-app-dark-img="pages/reset-password-dark.png">
         <div class="mx-auto">
-          <h3>Confirm password 👩🏻‍💻</h3>
+          <h3>Confirma tu contraseña 👩🏻‍💻</h3>
           <p>
-            Please confirm password for security reasons or <br> reset it by clicking on forgot password.
+            Por favor confirma tu contraseña por razones de seguridad o <br> reestablece tu contraseña haciendo click.
           </p>
         </div>
       </div>
@@ -39,13 +39,13 @@ $customizerHidden = 'customizer-hide';
           </a>
         </div>
         <!-- /Logo -->
-        <h4 class="mb-3">Confirm Password</h4>
-        <p class="text-start mb-4">Please confirm your password before continuing.</p>
-        <p class="mb-0 fw-semibold">Type your 6 digit security code</p>
+        <h4 class="mb-3">Confirmar Contraseña</h4>
+        <p class="text-start mb-4">Por favor confirma tu contraseña antes de continuar.</p>
+        <p class="mb-0 fw-semibold">Ingresa tu código de 6 dígitos</p>
         <form id="twoStepsForm" action="{{ route('password.confirm') }}" method="POST">
           @csrf
           <div class="mb-3 form-password-toggle">
-            <label class="form-label" for="password">Your Password</label>
+            <label class="form-label" for="password">Tu Contraseña</label>
             <div class="input-group input-group-merge">
               <input type="password" id="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" />
               <span class="input-group-text cursor-pointer">
@@ -60,7 +60,7 @@ $customizerHidden = 'customizer-hide';
           </div>
 
           <button type="submit" class="btn btn-primary d-grid w-100 mb-3">
-            Confirm Password
+            Confirma tu contraseña
           </button>
         </form>
 

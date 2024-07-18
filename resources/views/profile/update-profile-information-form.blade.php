@@ -1,10 +1,10 @@
 <x-jet-form-section submit="updateProfileInformation">
   <x-slot name="title">
-    {{ __('Profile Information') }}
+    {{ __('Perfil de Usuario') }}
   </x-slot>
 
   <x-slot name="description">
-    {{ __('Update your account\'s profile information and email address.') }}
+    {{ __('Actualiza tu nombre de sesión y correo.') }}
   </x-slot>
 
   <x-slot name="form">
@@ -21,7 +21,7 @@
           x-on:change=" photoName = $refs.photo.files[0].name; const reader = new FileReader(); reader.onload = (e) => { photoPreview = e.target.result;}; reader.readAsDataURL($refs.photo.files[0]);" />
 
         <!-- Current Profile Photo -->
-        <div class="mt-2" x-show="! photoPreview">
+        {{--<div class="mt-2" x-show="! photoPreview">
           <img src="{{ $this->user->profile_photo_url }}" class="rounded-circle" height="80px" width="80px">
         </div>
 
@@ -38,7 +38,7 @@
           <button type="button" class="btn btn-danger text-uppercase mt-2" wire:click="deleteProfilePhoto">
             {{ __('Remove Photo') }}
           </button>
-        @endif
+        @endif--}}
 
         <x-jet-input-error for="photo" class="mt-2" />
       </div>
@@ -46,7 +46,7 @@
 
     <!-- Name -->
     <div class="mb-3">
-      <x-jet-label class="form-label" for="name" value="{{ __('Name') }}" />
+      <x-jet-label class="form-label" for="name" value="{{ __('Nombre') }}" />
       <x-jet-input id="name" type="text" class="{{ $errors->has('name') ? 'is-invalid' : '' }}"
         wire:model.defer="state.name" autocomplete="name" />
       <x-jet-input-error for="name" />
@@ -54,7 +54,7 @@
 
     <!-- Email -->
     <div class="mb-3">
-      <x-jet-label class="form-label" for="email" value="{{ __('Email') }}" />
+      <x-jet-label class="form-label" for="email" value="{{ __('Correo') }}" />
       <x-jet-input id="email" type="email" class="{{ $errors->has('email') ? 'is-invalid' : '' }}"
         wire:model.defer="state.email" />
       <x-jet-input-error for="email" />
@@ -64,7 +64,7 @@
   <x-slot name="actions">
     <div class="d-flex align-items-baseline">
       <x-jet-button>
-        {{ __('Save') }}
+        {{ __('Guardar') }}
       </x-jet-button>
     </div>
   </x-slot>

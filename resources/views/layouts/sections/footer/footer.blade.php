@@ -6,7 +6,7 @@
         document.write(new Date().getFullYear())
 
       </script>
-      , made with ❤️ by <a href="{{ (!empty(config('variables.creatorUrl')) ? config('variables.creatorUrl') : '') }}" target="_blank" class="footer-link fw-semibold">{{ (!empty(config('variables.creatorName')) ? config('variables.creatorName') : '') }}</a>
+      Creado por Luisiana Moreno y Angel Quinteros para <strong>Universidad Fermín Toro</strong>
     </div>
     {{-- <div>
       <a href="{{ config('variables.documentation') ? config('variables.documentation') : '#' }}" target="_blank" class="footer-link me-4">Documentation</a>
@@ -14,3 +14,4 @@
   </div>
 </footer>
 <!--/ Footer-->
+ 

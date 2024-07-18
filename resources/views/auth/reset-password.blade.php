@@ -5,7 +5,7 @@ $customizerHidden = 'customizer-hide';
 
 @extends('layouts/blankLayout')
 
-@section('title', 'Reset Password')
+@section('title', 'Reestablece tu contraseña')
 
 @section('page-style')
 {{-- Page Css files --}}
@@ -20,9 +20,9 @@ $customizerHidden = 'customizer-hide';
       <div class="flex-row text-center mx-auto">
         <img src="{{asset('assets/img/pages/reset-password-'.$configData['style'].'.png')}}" alt="Auth Cover Bg color" width="520" class="img-fluid authentication-cover-img" data-app-light-img="pages/reset-password-light.png" data-app-dark-img="pages/reset-password-dark.png">
         <div class="mx-auto">
-          <h3>Setup new password 👩🏻‍💻</h3>
+          <h3>Crea nueva contraseña 👩🏻‍💻</h3>
           <p>
-            You can change your password for security <br> reasons or reset it if you forget it.
+            Puedes cambiar tu contraseña por razones de seguridad<br> o reestablece si la olvidaste.
           </p>
         </div>
       </div>
@@ -39,13 +39,13 @@ $customizerHidden = 'customizer-hide';
           </a>
         </div>
         <!-- /Logo -->
-        <h4 class="mb-2">Reset Password 🔒</h4>
+        <h4 class="mb-2">Reestablecer Contraseña 🔒</h4>
         <form id="formAuthentication" class="mb-3" action="{{ route('password.update') }}" method="POST">
           @csrf
           <input type="hidden" name="token" value="{{ $request->route('token') }}">
 
           <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
+            <label for="email" class="form-label">Correo</label>
             <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" placeholder="john@example.com" value="{{Request()->email}}" readonly />
             @error('email')
             <span class="invalid-feedback" role="alert">
@@ -55,7 +55,7 @@ $customizerHidden = 'customizer-hide';
           </div>
 
           <div class="mb-3 form-password-toggle">
-            <label class="form-label" for="password">New Password</label>
+            <label class="form-label" for="password">Nueva Contraseña</label>
             <div class="input-group input-group-merge">
               <input type="password" id="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" autofocus />
               <span class="input-group-text cursor-pointer">
@@ -69,7 +69,7 @@ $customizerHidden = 'customizer-hide';
             @enderror
           </div>
           <div class="mb-3 form-password-toggle">
-            <label class="form-label" for="confirm-password">Confirm Password</label>
+            <label class="form-label" for="confirm-password">Confirma tu contraseña</label>
             <div class="input-group input-group-merge">
               <input type="password" id="confirm-password" class="form-control" name="password_confirmation" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" />
               <span class="input-group-text cursor-pointer">
@@ -78,13 +78,13 @@ $customizerHidden = 'customizer-hide';
             </div>
           </div>
           <button type="submit" class="btn btn-primary d-grid w-100 mb-3">
-            Set new password
+            Crear nueva contraseña
           </button>
           <div class="text-center">
             @if (Route::has('login'))
             <a href="{{ route('login') }}">
               <i class="bx bx-chevron-left scaleX-n1-rtl"></i>
-              Back to login
+              Volver a Inicio
             </a>
             @endif
           </div>

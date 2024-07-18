@@ -4,7 +4,7 @@
 $breadcrumbs = [['link' => 'home', 'name' => 'Home'], ['link' => 'javascript:void(0)', 'name' => 'User'], ['name' => 'Profile']];
 @endphp
 
-@section('title', 'Profile')
+@section('title', 'Perfil')
 
 
 @section('content')
