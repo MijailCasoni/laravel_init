@@ -103,7 +103,7 @@ $containerNav = $containerNav ?? 'container-fluid';
               <div class="dropdown-divider"></div>
             </li>
             <li>
-              <h6 class="dropdown-header">Manage Team</h6>
+              <h6 class="dropdown-header">Gestión de equipos</h6>
             </li>
             <li>
               <div class="dropdown-divider"></div>
@@ -111,14 +111,14 @@ $containerNav = $containerNav ?? 'container-fluid';
             <li>
               <a class="dropdown-item" href="{{ Auth::user() ? route('teams.show', Auth::user()->currentTeam->id) : 'javascript:void(0)' }}">
                 <i class='bx bx-cog me-2'></i>
-                <span class="align-middle">Team Settings</span>
+                <span class="align-middle">Configuración de equipos</span>
               </a>
             </li>
             @can('create', Laravel\Jetstream\Jetstream::newTeamModel())
             <li>
               <a class="dropdown-item" href="{{ route('teams.create') }}">
                 <i class='bx bx-user me-2'></i>
-                <span class="align-middle">Create New Team</span>
+                <span class="align-middle">Crear nuevo equipo</span>
               </a>
             </li>
             @endcan
@@ -126,7 +126,7 @@ $containerNav = $containerNav ?? 'container-fluid';
               <div class="dropdown-divider"></div>
             </li>
             <lI>
-              <h6 class="dropdown-header">Switch Teams</h6>
+              <h6 class="dropdown-header">Cambiar equipos</h6>
             </lI>
             <li>
               <div class="dropdown-divider"></div>

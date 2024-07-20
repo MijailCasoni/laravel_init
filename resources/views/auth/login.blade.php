@@ -55,7 +55,7 @@ $customizerHidden = 'customizer-hide';
           @csrf
           <div class="mb-3">
             <label for="login-email" class="form-label">Correo</label>
-            <input type="text" class="form-control @error('email') is-invalid @enderror" id="login-email" name="email" placeholder="john@example.com" autofocus value="{{ old('email') }}">
+            <input type="text" class="form-control @error('email') is-invalid @enderror" id="login-email" name="email" placeholder="nala@ejemplo.com" autofocus value="{{ old('email') }}">
             @error('email')
             <span class="invalid-feedback" role="alert">
               <strong>{{ $message }}</strong>

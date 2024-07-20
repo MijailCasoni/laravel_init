@@ -58,7 +58,7 @@ $customizerHidden = 'customizer-hide';
           </div>
           <div class="mb-3">
             <label for="email" class="form-label">Tu email</label>
-            <input type="text" class="form-control @error('email') is-invalid @enderror" id="email" name="email" placeholder="correo@ejemplo.com" value="{{ old('email') }}" />
+            <input type="text" class="form-control @error('email') is-invalid @enderror" id="email" name="email" placeholder="nala@ejemplo.com" value="{{ old('email') }}" />
             @error('email')
             <span class="invalid-feedback" role="alert">
               <strong>{{ $message }}</strong>
@@ -89,22 +89,7 @@ $customizerHidden = 'customizer-hide';
               </span>
             </div>
           </div>
-          @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
-          <div class="mb-1">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="terms" name="terms" />
-              <label class="form-check-label" for="terms">
-                I agree to the
-                <a href="{{ route('terms.show') }}" target="_blank">
-                  terms_of_service
-                </a> and
-                <a href="{{ route('policy.show') }}" target="_blank">
-                  privacy_policy
-                </a>
-              </label>
-            </div>
-          </div>
-          @endif
+          
           <button type="submit" class="btn btn-primary d-grid w-100">Crear cuenta</button>
         </form>
 

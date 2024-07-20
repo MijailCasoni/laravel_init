@@ -8,86 +8,58 @@ $configData = Helper::appClasses();
 
 @section('content')
 
-@role('admin')
-<div class="container">
+    
+    <div class="container-mt-5">
+        <div class="row justify-content-center">
+                <div class="col-md-8" style="margin-left: 30px; padding-top: 100px;">
+                    @role('admin')
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h1 class="text-center">Bienvenido Administrador a tu panel</h1>
+                        </div>
+                        <div class="card-body">
+                            <form method="GET" action="{{ route('pages-home') }}">
+                                <div class="input-group mb-3">
+                                    <input type="text" name="search" class="form-control" placeholder="Buscar usuarios..." aria-label="Buscar usuarios">
+                                    <button class="btn btn-primary" type="submit">Buscar</button>
+                                </div>
+                            </form>
+                            @if(isset($users))
+                            <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Nombre</th>
+                                            <th>Correo</th>
+                                            <th>Contraseña</th>
+                                            <th>Rol</th>
+                                        </tr>
+                                    </thead>
+                                <tbody>
+                                @foreach($users as $user)
+                                    <tr>
+                                    <td>{{ $user->name }}</td>
+                                    <td>{{ $user->email }}</td>
+                                    <td>{{ $user->password }}</td>
+                                    <td>{{ $user->roles->pluck('name')->join(', ') }}</td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                            @endif
+                        </div>
+                    </div>
+                @endrole
 
-    <div class="row">
-      <h1>Bienvenido a tu panel de gestión</h1>
-       {{-- <div class="col-md-8">
-            <h2>Buscar usuario</h2>
-            <form action="{{ route('pages-home') }}" method="GET" class="mb-3">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Buscar..." name="search" value="{{ $search ?? '' }}">
-                    <button type="submit" class="btn btn-primary">Buscar</button>
-                </div>
-            </form>
-            @if (session('successMessage'))
-            <div class="alert alert-success">
-                {{ session('successMessage') }}
-            </div>
-            @endif
-            {{-- <ul class="list-group">
-                @forelse ($users as $user)
-                    <li class="list-group-item">
-                        {{ $user->name }} - {{ $user->email }}
-                        <button class="btn btn-primary btn-sm float-end" onclick="showEditForm('{{ $user->id }}', '{{ $user->name }}', '{{ $user->email }}', '{{ $user->getRoleNames()->first() }}')">Modificar datos</button>
-
-                    <form action="{{ route('delete-user', $user->id) }}" method="POST" class="d-inline">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-danger btn-sm float-end">Eliminar</button>
-                    </form>
-                    </li>
-                @empty
-                    <li class="list-group-item">Usuario no encontrado.</li>
-                @endforelse
-            </ul>
-        </div>--}}
-    </div>
-
-  {{--   @if (session('successMessage'))
-        <div class="alert alert-success mt-3">
-            {{ session('successMessage') }}
-        </div>
-    @endif
-    <div class="row">
-        <div class="col-md-8">
-            <div id="editFormContainer" style="display: none;">
-                <h2>Modificar datos del usuario</h2>
-                <form id="editForm" method="POST" action="">
-                    @csrf
-                    @method('PUT')
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" id="name" name="name" required>
+                @role('user')
+                <div class="card mb-4">
+                    <div class="card-header">
+                      <h1 class="text-center">Bienvenido a tu panel de gestión, Usuario</h1>
                     </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Correo electrónico</label>
-                        <input type="email" class="form-control" id="email" name="email" required>
+                    <div class="card-body">
+                      <p>Esta es tu perfil de usuario. Estamos encantados de que puedas ver nuestro trabajo. <br>Aquí puedes ver la información de tu cuenta. Si necesitas cambiarla, puedes ir a configuraciones y modificar tus datos.</p>
+                      <p><strong>Nombre:</strong> {{ Auth::user()->name }}</p>
+                      <p><strong>Correo:</strong> {{ Auth::user()->email }}</p>
+                      <p><strong>Rol:</strong> {{ Auth::user()->roles->pluck('name')->join(', ') }}</p>
                     </div>
-                    <div class="mb-3">
-                        <label for="password" class="form-label">Contraseña</label>
-                        <input type="password" class="form-control" id="password" name="password">
-                    </div>
-                    <div class="mb-3">
-                        <label for="password_confirmation" class="form-label">Confirmar Contraseña</label>
-                        <input type="password" class="form-control" id="password_confirmation" name="password_confirmation">
-                    </div>
-                    <div class="mb-3">
-                        <label for="role" class="form-label">Rol</label>
-                        <select class="form-control" id="role" name="role" required>
-                            <option value="admin">Admin</option>
-                            <option value="user">User</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Guardar cambios</button>
-                </form>
-            </div>
-        </div>
-    </div>--}}
-</div>
-@endrole
-
-@role('user')
-<h1>Bienvenido a tu panel de gestión</h1>
-@endrole
+                  </div>
+                @endrole

@@ -18,9 +18,9 @@ $customizerHidden = 'customizer-hide';
     <!-- /Left Text -->
     <div class="d-none d-lg-flex col-lg-7 col-xl-8 align-items-center">
       <div class="flex-row text-center mx-auto">
-        <img src="{{asset('assets/img/pages/forgot-password-'.$configData['style'].'.png')}}" alt="Auth Cover Bg color" width="520" class="img-fluid authentication-cover-img" data-app-light-img="pages/forgot-password-light.png" data-app-dark-img="pages/forgot-password-dark.png">
+        <!--<img src="{{asset('assets/img/pages/forgot-password-'.$configData['style'].'.png')}}" alt="Auth Cover Bg color" width="520" class="img-fluid authentication-cover-img" data-app-light-img="pages/forgot-password-light.png" data-app-dark-img="pages/forgot-password-dark.png">-->
         <div class="mx-auto">
-          <h3>No wte preocupes, te enviaremos las instrucciones 👩🏻‍💻</h3>
+          <h3>No te preocupes, te enviaremos las instrucciones 👩🏻‍💻</h3>
           <p>
             Podemos ayudarte a cambiar tu contraseña e información de seguridad. 
             Primero, ingresa<br> tu dirección de corre y haz click en el link de reestablecer contraseña.</p>
@@ -52,7 +52,7 @@ $customizerHidden = 'customizer-hide';
           @csrf
           <div class="mb-3">
             <label for="email" class="form-label">Correo</label>
-            <input type="text" class="form-control @error('email') is-invalid @enderror" id="email" name="email" placeholder="john@example.com" autofocus>
+            <input type="text" class="form-control @error('email') is-invalid @enderror" id="email" name="email" placeholder="nala@example.com" autofocus>
             @error('email')
             <span class="invalid-feedback" role="alert">
               <strong>{{ $message }}</strong>

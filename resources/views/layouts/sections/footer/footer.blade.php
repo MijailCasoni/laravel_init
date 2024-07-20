@@ -6,7 +6,7 @@
         document.write(new Date().getFullYear())
 
       </script>
-      Creado por Luisiana Moreno y Angel Quinteros para <strong>Universidad Fermín Toro</strong>
+      Creado por Luisiana Moreno y Angel Quinteros <stronge>Equipo 8475</stronge>para <strong>Universidad Fermín Toro</strong>
     </div>
     {{-- <div>
       <a href="{{ config('variables.documentation') ? config('variables.documentation') : '#' }}" target="_blank" class="footer-link me-4">Documentation</a>
